@@ -6,7 +6,7 @@ export const RESUME_LINK = 'https://drive.google.com/file/d/1sRh7UQlZOTOamTz9qfQ
 export const aboutMeContent = {
   role: "Software Developer | Full-Stack Enthusiast",
   summary:
-    "Greetings! I'm Asmita Sagarkar, a highly motivated web developer at Tata Consultancy Services (TCS) with a strong foundation in Java, Servlets, JSP, and Spring Boot. I thrive on creating engaging and user-friendly web solutions, constantly learning and evolving in the field of full-stack development. My love for problem-solving drives me to stay up-to-date with the latest industry trends and technologies. Let's build something amazing together! 🚀",
+    "Greetings! I'm Asmita Sagarkar, a highly motivated software developer at Tata Consultancy Services (TCS) with a strong foundation in Java, Frontend and Backend technologies. I thrive on creating engaging and user-friendly web solutions, constantly learning and evolving in the field of full-stack development. My love for problem-solving drives me to stay up-to-date with the latest industry trends and technologies. Let's build something amazing together! 🚀",
   tagline: "I build robust, scalable, and user-friendly web solutions.",
 };
 
@@ -29,6 +29,7 @@ export const skills = [
   { name: 'MySQL', level: 85, category: 'Database' },
   { name: 'Git', level: 90, category: 'Tools' },
   { name: 'Postman', level: 80, category: 'Tools' },
+  { name: 'WSO2', level: 80, category: 'Tools' },
   { name: 'C / C++', level: 70, category: 'Fundamentals' },
 ];
 

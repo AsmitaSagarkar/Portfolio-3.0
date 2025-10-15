@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 
 export const Hero = () => {
   return (
-    <section id="hero" className="flex flex-col items-center justify-center min-h-[90vh] py-20 px-4 text-center">
+    <section id="hero" className="flex flex-col items-center justify-center min-h-[90vh] px-4 text-center">
       <MotionDiv className="max-w-4xl" transition={{ staggerChildren: 0.1 }}>
         
         {/* Optimized Image for Next.js */}
@@ -25,7 +25,7 @@ export const Hero = () => {
         </motion.div>
 
         <motion.p 
-            className="text-xl text-textSubtle font-semibold mb-4" 
+            className="text-3xl text-textSubtle font-semibold mb-4" 
             transition={{ delay: 0.1 }}
         >
             Hi, I'm Asmita Sagarkar.
@@ -59,7 +59,7 @@ export const Hero = () => {
           transition={{ delay: 0.4 }}
         >
             <Link href="#contact" passHref>
-                <button className="bg-background-dark text-text1-light py-2 px-6 rounded-lg font-semibold hover:bg-emerald-600 shadow-lg">
+                <button className="bg-background-dark text-xl text-text1-light py-2 px-7 rounded-lg font-semibold shadow-lg border-4">
                     Contact Me
                 </button>
             </Link>
@@ -67,7 +67,7 @@ export const Hero = () => {
                 href={RESUME_LINK} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="border border-primary-accent text-primary-accent py-2 px-6 rounded-lg font-semibold hover:bg-primary-accent/10 transition-colors flex items-center"
+                className="border border-primary-accent text-xl text-primary-accent py-2 px-7 rounded-lg font-semibold flex items-center no-underline border-4"
             >
                 Resume 
                 <Download className="ml-2 h-4 w-4" />

@@ -9,8 +9,8 @@
     /* Text colors */
     --text1-light: #E5E7EB; /* Used by Hero button (text-text1-light) */
     --text-light: #E5E7EB; /* Alias for potential usage */
-    --subtle-text: #94A3B8;
-    --primary-accent: #415a77;
+    --subtle-text: #8e96a3;
+    --primary-accent: #3b5067;
     --textSubtle: #1b263b;
     --background-dark: #0F172A;
     --card-bg: #0d1b2a;
@@ -26,6 +26,9 @@
   .bg-card-bg { background-color: var(--card-bg); }
   .bg-primary-accent { background-color: var(--primary-accent); }
   .border-primary-accent { border-color: var(--primary-accent); }
+  /* Background utilities for subtle text variants (used as backgrounds in components) */
+  .bg-textSubtle { background-color: var(--textSubtle); }
+  .bg-text-subtle { background-color: var(--subtle-text); }
 }
 
 

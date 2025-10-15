@@ -17,7 +17,7 @@ export default function Home() {
       
       <footer className="py-8 text-center text-subtle-text border-t border-primary-accent/10">
         <p className="text-sm">
-          Designed & Built with Next.js, Tailwind CSS, and Framer Motion by Asmita Sagarkar.
+          © 2025 Asmita Sagarkar
         </p>
       </footer>
     </>

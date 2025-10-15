@@ -37,8 +37,8 @@ export const Skills = () => {
     <section id="skills" className="py-20 px-4 border-t border-primary-accent/10">
       <div className="max-w-6xl mx-auto">
         <MotionDiv className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4 text-primary-accent">My Tech Stack</h2>
-          <p className="text-lg text-subtle-text">A glimpse into the tools and languages that drive my development work.</p>
+          <h2 className="text-4xl font-bold mb-4 text-textSubtle">My Tech Stack</h2>
+          <p className="text-lg text-primary-accent font-semibold">A glimpse into the tools and languages that drive my development work.</p>
         </MotionDiv>
 
         {/* Filter Tabs */}
@@ -49,8 +49,8 @@ export const Skills = () => {
               onClick={() => setActiveFilter(category)}
               className={`py-2 px-4 rounded-full text-sm font-mono transition-colors ${
                 activeFilter === category
-                  ? 'bg-primary-accent text-background-dark font-bold shadow-lg'
-                  : 'bg-card-bg text-subtle-text hover:bg-primary-accent/20'
+                  ? 'bg-primary-accent text-text1-light font-bold shadow-lg'
+                  : 'bg-card-bg text-text1-light hover:bg-primary-accent/20'
               }`}
             >
               {category}
@@ -63,11 +63,11 @@ export const Skills = () => {
             {filteredSkills.map((skill, index) => (
                 <MotionDiv
                     key={skill.name}
-                    className="p-4 bg-card-bg rounded-lg shadow-xl"
+                    className="p-4 bg-subtle-text rounded-lg shadow-xl"
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                    <h3 className="font-mono text-lg text-text-light mb-1">{skill.name}</h3>
-                    <p className="text-xs text-subtle-text mb-2">{skill.category}</p>
+                    <h3 className="font-mono text-lg text-textSubtle mb-1">{skill.name}</h3>
+                    <p className="text-xs text-textSubtle mb-2">{skill.category}</p>
                     <SkillBar level={skill.level} />
                 </MotionDiv>
             ))}
