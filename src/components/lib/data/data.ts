@@ -31,6 +31,8 @@ export const skills = [
   { name: 'Postman', level: 80, category: 'Tools' },
   { name: 'WSO2', level: 80, category: 'Tools' },
   { name: 'C / C++', level: 70, category: 'Fundamentals' },
+  { name: 'Linux', level: 70, category: 'Tools' },
+
 ];
 
 // Extract unique skill categories for filtering
@@ -61,6 +63,26 @@ export const projects: Project[] = [
     },
     {
         id: 2,
+        title: "Spndo (Full-Stack)",
+        shortDescription: "A personal finance management app to track expenses and budgets effectively.",
+        longDescription: "Architecting a personal finance app with a Next.js/TypeScript frontend and a Spring Boot/MySQL backend. Features include secure JWT authentication, RESTful APIs for transaction management, and a component-driven UI.",
+        githubUrl: "https://github.com/Waahguptaji/spndo",
+        liveUrl: "https://waahguptaji.github.io/spndo/",
+        tags: ["Nextjs", "Tailwind CSS", "Full-Stack", "TypeScript", "Node.js", "Express","MongoDB"],
+        imageUrl: "/images/movie.gif",
+    },
+    {
+        id: 3,
+        title: "MoviePulse (React/Tailwind)",
+        shortDescription: "A sleek movie discovery site featuring curated film collections.",
+        longDescription: "Built with React and styled with Tailwind CSS for a responsive, modern user experience and seamless navigation across all devices.",
+        githubUrl: "https://github.com/AsmitaSagarkar/Movie_Pulse",
+        liveUrl: "https://asmitasagarkar.github.io/Movie_Pulse/",
+        tags: ["React", "Tailwind CSS", "Frontend"],
+        imageUrl: "/images/movie.gif",
+    },
+    {
+        id: 4,
         title: "Blog Website",
         shortDescription: "A robust platform for content creation and sharing thoughts and experiences.",
         longDescription: "Built with a full-stack approach using Node.js, Express.js, EJS, and Mongoose for seamless data handling and dynamic content serving.",
@@ -69,7 +91,7 @@ export const projects: Project[] = [
         imageUrl: "/images/blog.gif",
     },
     {
-        id: 3,
+        id: 5,
         title: "Note-Taking App (Keep Clone)",
         shortDescription: "A simple, intuitive note-taking application for quick thought capture and organization.",
         longDescription: "This project uses React and modern frontend practices to provide a seamless and highly responsive platform for creating and managing notes.",
@@ -79,7 +101,7 @@ export const projects: Project[] = [
         imageUrl: "/images/notes.gif",
     },
     {
-        id: 4,
+        id: 6,
         title: "To-Do List",
         shortDescription: "An efficient and organized way to manage tasks and boost productivity.",
         longDescription: "A full-stack application leveraging Node.js, Express, EJS, and Mongoose, allowing users to create separate lists for specific tasks, enhancing organization.",
@@ -87,16 +109,7 @@ export const projects: Project[] = [
         tags: ["Node.js", "MongoDB", "Full-Stack", "EJS"],
         imageUrl: "/images/todolist.gif",
     },
-    {
-        id: 5,
-        title: "MoviePulse (React/Tailwind)",
-        shortDescription: "A sleek movie discovery site featuring curated film collections.",
-        longDescription: "Built with React and styled with Tailwind CSS for a responsive, modern user experience and seamless navigation across all devices.",
-        githubUrl: "https://github.com/AsmitaSagarkar/Movie_Pulse",
-        liveUrl: "https://asmitasagarkar.github.io/Movie_Pulse/",
-        tags: ["React", "Tailwind CSS", "Frontend"],
-        imageUrl: "/images/movie.gif",
-    }
+    
 ];
 
 // Extract unique project tags for filtering
