@@ -23,14 +23,14 @@ export const Hero = () => {
         </motion.div>
 
         <motion.p className="text-3xl text-textSubtle font-semibold mb-4" transition={{ delay: 0.1 }}>
-          Hi, I'm Asmita Sagarkar.
+          Hi, I&apos;m Asmita Sagarkar.
         </motion.p>
 
         <motion.h1 
           className="text-5xl sm:text-7xl font-bold mb-4 text-textSubtle tracking-tighter"
           transition={{ delay: 0.2 }}
         >
-          I'm a{' '}
+          I&apos;m a{' '}
           <span className="text-primary-accent inline-block">
             <TypeAnimation
               sequence={['Full-Stack Developer', 2000, 'Java Developer', 2000, 'Software Engineer', 2000]}

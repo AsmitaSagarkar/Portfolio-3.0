@@ -2,7 +2,7 @@
 
 import { MotionDiv } from '@/components/lib/motionDiv/motionDiv';
 import { Mail, Github, Linkedin, Twitter } from 'lucide-react';
-import Link from 'next/link';
+
 import { socialLinks } from '@/components/lib/data/data';
 import { useState } from 'react';
 
@@ -56,7 +56,7 @@ export const Contact = () => {
       <div className="max-w-6xl mx-auto">
         <MotionDiv className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 text-textSubtle">Get In Touch</h2>
-          <p className="text-lg text-primary-accent font-semibold">I'm currently seeking new opportunities. Let's connect!</p>
+          <p className="text-lg text-primary-accent font-semibold">I&apos;m currently seeking new opportunities. Let&apos;s connect!</p>
         </MotionDiv>
 
         <div className="flex flex-col lg:flex-row gap-12">
