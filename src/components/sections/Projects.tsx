@@ -1,135 +1,53 @@
-// components/sections/Projects.tsx
-'use client';
-import { MotionDiv } from '@/components/lib/motionDiv/motionDiv';
-import { AnimatePresence, motion } from 'framer-motion';
-import { projects, projectTags, Project } from '@/components/lib/data/data';
-import { useState, useMemo } from 'react';
-import { Github, Link as LinkIcon, Info } from 'lucide-react';
+"use client";
+import { Github, ExternalLink, ChevronRight } from 'lucide-react';
+import SpotlightCard from '@/components/ui/SpotlightCard';
+import Reveal from '@/components/ui/Reveal';
+import { DATA } from '@/components/lib/data/data';
 
-const ProjectCard = ({ project }: { project: Project }) => {
-    // Example of project overlay for more info
-    const [isHovered, setIsHovered] = useState(false);
-    const [showDetails, setShowDetails] = useState(false);
-
-    return (
-        <motion.div
-            layout // Enables smooth position transitions on filter change
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            transition={{ type: "spring", stiffness: 100, damping: 15 }}
-            className="relative h-72 bg-subtle-text rounded-xl overflow-hidden shadow-2xl group cursor-pointer"
-            onHoverStart={() => setIsHovered(true)}
-            onHoverEnd={() => setIsHovered(false)}
-        >
-
-            {/* Hover Overlay */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: isHovered ? 1 : 1}}
-                className="bg-primary-accent/5 flex flex-col items-center justify-center p-4"
-            >
-                <h3 className="text-xl font-bold text-background-dark mb-2">{project.title}</h3>
-                <p className="text-sm text-primary-accent font-semibold text-center mb-4">{project.shortDescription}</p>
-                
-                <div className="flex space-x-4">
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="bg-background-dark text-text1-light p-2 rounded-full hover:bg-gray-700 transition-colors ">
-                        <Github className="w-5 h-5" />
-                    </a>
-                    {project.liveUrl && (
-                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="bg-background-dark text-text1-light p-2 rounded-full hover:bg-gray-700 transition-colors">
-                            <LinkIcon className="w-5 h-5" />
-                        </a>
-                    )}
-                    <button onClick={() => setShowDetails(true)} className="bg-background-dark text-text1-light p-2 rounded-full hover:bg-gray-700 transition-colors">
-                        <Info className="w-5 h-5" />
-                    </button>
-                </div>
-            </motion.div>
-
-            {/* Tags overlay at the bottom */}
-            <div className="absolute bottom-0 left-0 right-0 p-2 bg-card-bg/90 flex flex-wrap gap-1">
-                {project.tags.map(tag => (
-                    <span key={tag} className="text-xs font-mono text-primary-accent/70 px-2 py-0.5 rounded-md bg-gray-700/50">
-                        {tag}
-                    </span>
-                ))}
-            </div>
-
-            {/* Modal for Detailed Description */}
-            <AnimatePresence>
-                {showDetails && (
-                    <motion.div 
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-50 flex items-center justify-center bg-background-dark/90 p-4 text-text1-light"
-                        onClick={() => setShowDetails(false)}
-                    >
-                        <motion.div 
-                            initial={{ y: 50, scale: 0.9 }}
-                            animate={{ y: 0, scale: 1 }}
-                            exit={{ y: 50, scale: 0.9 }}
-                            className="bg-card-bg max-w-xl w-full p-8 rounded-xl shadow-2xl"
-                            onClick={(e) => e.stopPropagation()}
-                        >
-                            <h3 className="text-3xl font-bold text-text1-light mb-4">{project.title}</h3>
-                            <p className="text-text1-light mb-6">{project.longDescription}</p>
-                            <button onClick={() => setShowDetails(false)} className="mt-4 bg-gray-700 text-text1-light py-2 px-4 rounded-lg hover:bg-gray-600">
-                                Close
-                            </button>
-                        </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </motion.div>
-    );
+const Projects = () => {
+  return (
+    <section id="projects">
+      <Reveal>
+         <div className="flex items-center gap-4 mb-12">
+             <h2 className="text-3xl font-bold">Selected Works</h2>
+             <div className="h-px flex-1 bg-gradient-to-r from-cyan-500/50 to-transparent"></div>
+         </div>
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {DATA.projects.map((project) => (
+               <SpotlightCard key={project.id} className="group flex flex-col h-[350px]">
+                  <div className="relative h-[50%] overflow-hidden bg-slate-800">
+                     <img 
+                        src={project.imageUrl} 
+                        alt={project.title}
+                        className="w-full h-full object-cover opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                        onError={(e) => { e.currentTarget.src = 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80'; }} 
+                     />
+                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-90"></div>
+                     <div className="absolute top-4 right-4 flex gap-2 translate-y-[-10px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                        <a href={project.githubUrl} target="_blank" rel="noreferrer" className="p-2 bg-black/50 backdrop-blur-md rounded-full hover:bg-white hover:text-black transition-colors"><Github size={16} /></a>
+                        {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noreferrer" className="p-2 bg-black/50 backdrop-blur-md rounded-full hover:bg-white hover:text-black transition-colors"><ExternalLink size={16} /></a>}
+                     </div>
+                  </div>
+                  <div className="flex-1 p-6 flex flex-col justify-between relative z-10">
+                     <div>
+                        <div className="flex gap-2 mb-3">
+                           {project.tags.map((tag, i) => (
+                              <span key={i} className="text-[10px] font-bold text-cyan-400 uppercase tracking-wider">{tag}</span>
+                           ))}
+                        </div>
+                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">{project.title}</h3>
+                        <p className="text-slate-400 text-sm line-clamp-2">{project.shortDescription}</p>
+                     </div>
+                     <div className="flex items-center text-sm font-medium text-slate-500 group-hover:text-white transition-colors mt-4">
+                        View Case Study <ChevronRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
+                     </div>
+                  </div>
+               </SpotlightCard>
+            ))}
+         </div>
+      </Reveal>
+    </section>
+  );
 };
 
-export const Projects = () => {
-    const [activeFilter, setActiveFilter] = useState('All');
-
-    const filteredProjects = useMemo(() => {
-        if (activeFilter === 'All') return projects;
-        return projects.filter(project => project.tags.includes(activeFilter));
-    }, [activeFilter]);
-
-    return (
-        <section id="projects" className="py-20 px-4 border-t border-primary-accent/10">
-            <div className="max-w-7xl mx-auto">
-                <MotionDiv className="text-center mb-12">
-                    <h2 className="text-4xl font-bold mb-4 text-textSubtle">My Work</h2>
-                    <p className="text-lg text-primary-accent font-semibold">Projects demonstrating my skills and passion across the full stack.</p>
-                </MotionDiv>
-                
-                {/* Filter Tabs */}
-                <MotionDiv className="flex flex-wrap justify-center gap-3 mb-12" transition={{ staggerChildren: 0.05 }}>
-                    {projectTags.map(tag => (
-                        <motion.button
-                            key={tag}
-                            onClick={() => setActiveFilter(tag)}
-                            className={`py-1.5 px-4 rounded-full text-sm font-mono transition-colors ${
-                                activeFilter === tag
-                                    ? 'bg-primary-accent text-text1-light font-bold shadow-md'
-                                    : 'bg-card-bg text-text1-light hover:bg-primary-accent/20'
-                            }`}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            {tag}
-                        </motion.button>
-                    ))}
-                </MotionDiv>
-
-                {/* Project Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
-                    <AnimatePresence>
-                        {filteredProjects.map((project) => (
-                            <ProjectCard key={project.id} project={project} />
-                        ))}
-                    </AnimatePresence>
-                </div>
-            </div>
-        </section>
-    );
-};
+export default Projects;

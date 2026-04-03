@@ -1,34 +1,26 @@
-@reference "tailwindcss";
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  :root {
-    /* Text colors */
-    --text1-light: #E5E7EB; /* Used by Hero button (text-text1-light) */
-    --text-light: #E5E7EB; /* Alias for potential usage */
-    --subtle-text: #8e96a3;
-    --primary-accent: #3b5067;
-    --textSubtle: #1b263b;
-    --background-dark: #0F172A;
-    --card-bg: #0d1b2a;
-  }
-  
-  /* Text utility classes */
-  .text-light { color: var(--text-light); }
-  .text-text1-light { color: var(--text1-light); }
-  .text-subtle-text { color: var(--subtle-text); }
-  .text-primary-accent { color: var(--primary-accent); }
-  .text-textSubtle { color: var(--textSubtle); }
-  .bg-background-dark { background-color: var(--background-dark); }
-  .bg-card-bg { background-color: var(--card-bg); }
-  .bg-primary-accent { background-color: var(--primary-accent); }
-  .border-primary-accent { border-color: var(--primary-accent); }
-  /* Background utilities for subtle text variants (used as backgrounds in components) */
-  .bg-textSubtle { background-color: var(--textSubtle); }
-  .bg-text-subtle { background-color: var(--subtle-text); }
+@theme {
+  --color-background: #000000;
+  --color-foreground: #ffffff;
 }
 
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
 
+/* Optional: Custom Scrollbar for a premium feel */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a; 
+}
+::-webkit-scrollbar-thumb {
+  background: #334155; 
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569; 
+}
