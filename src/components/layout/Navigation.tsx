@@ -2,10 +2,15 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
-const Navigation = ({ activeSection, setActiveSection }:any) => {
+type NavigationProps = {
+  activeSection: string;
+  setActiveSection: (id: string) => void;
+};
+
+const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const scrollTo = (id:any) => {
+  const scrollTo = (id: string) => {
     setIsMenuOpen(false);
     setActiveSection(id);
     const element = document.getElementById(id);

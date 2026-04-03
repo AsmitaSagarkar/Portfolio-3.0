@@ -1,7 +1,6 @@
 "use client";
 import { Sparkles } from 'lucide-react';
 import Reveal from '@/components/ui/Reveal';
-import SpotlightCard from '@/components/ui/SpotlightCard';
 import { DATA } from '@/components/lib/data/data';
 
 const Contact = () => {
@@ -14,7 +13,7 @@ const Contact = () => {
                <Sparkles className="w-10 h-10 text-yellow-400 mx-auto mb-6 animate-spin-slow" />
                <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to start a project?</h2>
                <p className="text-slate-400 max-w-2xl mx-auto mb-10 text-lg">
-                 Let's turn your ideas into reality. Reach out for collaborations or just a friendly hello.
+                 Lets turn your ideas into reality. Reach out for collaborations or just a friendly hello.
                </p>
                <a href={`mailto:${DATA.socialLinks.email}`} className="inline-block px-8 py-4 bg-white text-black font-bold rounded-full hover:scale-105 active:scale-95 transition-transform shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]">
                  Say Hello 👋
