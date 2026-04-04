@@ -1,7 +1,7 @@
 "use client";
 import { Github, ExternalLink, ChevronRight } from 'lucide-react';
-import Image from 'next/image';
-import type { SyntheticEvent } from 'react';
+// import Image from 'next/image';
+// import type { SyntheticEvent } from 'react';
 import SpotlightCard from '@/components/ui/SpotlightCard';
 import Reveal from '@/components/ui/Reveal';
 import { DATA } from '@/components/lib/data/data';
