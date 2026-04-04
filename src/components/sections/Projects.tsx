@@ -1,5 +1,7 @@
 "use client";
 import { Github, ExternalLink, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
+import type { SyntheticEvent } from 'react';
 import SpotlightCard from '@/components/ui/SpotlightCard';
 import Reveal from '@/components/ui/Reveal';
 import { DATA } from '@/components/lib/data/data';
@@ -16,12 +18,14 @@ const Projects = () => {
             {DATA.projects.map((project) => (
                <SpotlightCard key={project.id} className="group flex flex-col h-[350px]">
                   <div className="relative h-[50%] overflow-hidden bg-slate-800">
-                     <img 
+                     {/* <Image 
                         src={project.imageUrl} 
-                        alt={project.title}
+                        alt="loading"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="w-full h-full object-cover opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
-                        onError={(e) => { e.currentTarget.src = 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80'; }} 
-                     />
+                        onError={(e: SyntheticEvent<HTMLImageElement>) => { e.currentTarget.src = 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80'; }} 
+                     /> */}
                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-90"></div>
                      <div className="absolute top-4 right-4 flex gap-2 translate-y-[-10px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                         <a href={project.githubUrl} target="_blank" rel="noreferrer" className="p-2 bg-black/50 backdrop-blur-md rounded-full hover:bg-white hover:text-black transition-colors"><Github size={16} /></a>

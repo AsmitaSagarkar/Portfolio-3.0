@@ -34,7 +34,7 @@ export const DATA = {
       githubUrl: "https://github.com/AsmitaSagarkar/myPortfolio",
       liveUrl: "https://asmitasagarkar.github.io/myPortfolio/",
       tags: ["React", "Tailwind"],
-      imageUrl: "/images/portfolio.gif",
+      imageUrl: "",
     },
     {
       id: 2,
@@ -43,7 +43,7 @@ export const DATA = {
       githubUrl: "https://github.com/Waahguptaji/spndo",
       liveUrl: "https://waahguptaji.github.io/spndo/",
       tags: ["Next.js", "Spring Boot"],
-      imageUrl: "/images/movie.gif",
+      imageUrl: "",
     },
     {
       id: 3,
@@ -52,7 +52,7 @@ export const DATA = {
       githubUrl: "https://github.com/AsmitaSagarkar/Movie_Pulse",
       liveUrl: "https://asmitasagarkar.github.io/Movie_Pulse/",
       tags: ["React", "API"],
-      imageUrl: "/images/movie.gif",
+      imageUrl: "",
     },
     {
       id: 4,
@@ -61,7 +61,7 @@ export const DATA = {
       githubUrl:
         "https://github.com/AsmitaSagarkar/Blog_Website/tree/master",
       tags: ["Node.js", "Mongo"],
-      imageUrl: "/images/blog.gif",
+      imageUrl: "",
     },
     {
       id: 5,
@@ -71,7 +71,7 @@ export const DATA = {
         "https://github.com/AsmitaSagarkar/Keep_Notes/tree/master",
       liveUrl: "https://oejb7v.csb.app/",
       tags: ["React", "State"],
-      imageUrl: "/images/notes.gif",
+      imageUrl: "",
     },
     {
       id: 6,
@@ -80,7 +80,7 @@ export const DATA = {
       githubUrl:
         "https://github.com/AsmitaSagarkar/To_Do_List/tree/master",
       tags: ["Express", "EJS"],
-      imageUrl: "/images/todolist.gif",
+      imageUrl: "",
     },
   ],
 };

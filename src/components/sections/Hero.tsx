@@ -23,7 +23,7 @@ const Hero = () => {
                <div className="space-y-6">
                   <div className="flex items-center gap-3">
                      <Badge className="bg-purple-500/20 text-purple-200 border-purple-500/30">Open to work</Badge>
-                     <Badge className="bg-cyan-500/20 text-cyan-200 border-cyan-500/30">TCS Developer</Badge>
+                     <Badge className="bg-cyan-500/20 text-cyan-200 border-cyan-500/30">Software Developer</Badge>
                   </div>
                   <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]">
                     I craft <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 animate-gradient-x">intelligent</span> web experiences.

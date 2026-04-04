@@ -24,7 +24,7 @@ const Contact = () => {
                   <a href={DATA.socialLinks.github} className="hover:opacity-100 hover:text-white transition-all">GitHub</a>
                </div>
                <div className="mt-10 text-xs text-slate-600">
-                  © {new Date().getFullYear()} Asmita Sagarkar. Made with React & Love.
+                  © {new Date().getFullYear()} Asmita Sagarkar.
                </div>
             </div>
          </div>
