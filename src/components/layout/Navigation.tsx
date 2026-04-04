@@ -22,7 +22,7 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
       <div className="bg-black/70 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 flex items-center justify-between shadow-2xl shadow-purple-900/20">
          <div className="font-bold text-lg tracking-tight flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 animate-pulse"></div>
-            Asmita<span className="text-slate-600">.dev</span>
+            Asmita
          </div>
 
          <div className="hidden md:flex items-center gap-1">
