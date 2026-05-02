@@ -18,15 +18,15 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
   };
 
   return (
-    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-xl">
+    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-xl">
       <div className="bg-black/70 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 flex items-center justify-between shadow-2xl shadow-purple-900/20">
          <div className="font-bold text-lg tracking-tight flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 animate-pulse"></div>
+            <div className="w-3 h-3 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 animate-pulse px"></div>
             Asmita
          </div>
 
-         <div className="hidden md:flex items-center gap-1">
-           {['about', 'stack', 'projects', 'contact'].map((item) => (
+         <div className="hidden md:flex items-center gap-2 px-4">
+           {['about', 'experience', 'stack', 'projects', 'contact'].map((item) => (
              <button 
                key={item}
                onClick={() => scrollTo(item)}
@@ -45,7 +45,7 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
       {/* Mobile Menu */}
       {isMenuOpen && (
          <div className="absolute top-full left-0 w-full mt-2 bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl p-4 flex flex-col gap-2 animate-in slide-in-from-top-5 fade-in duration-200">
-           {['about', 'stack', 'projects', 'contact'].map((item) => (
+           {['about', 'experience', 'stack', 'projects', 'contact'].map((item) => (
              <button 
                key={item}
                onClick={() => scrollTo(item)}

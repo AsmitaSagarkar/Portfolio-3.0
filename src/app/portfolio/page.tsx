@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Navigation from '@/components/layout/Navigation';
 import Hero from '@/components/sections/Hero';
+import Experience from '@/components/sections/Experience';
 import Skills from '@/components/sections/Skills';
 import Projects from '@/components/sections/Projects';
 import Contact from '@/components/sections/Contact';
@@ -18,6 +19,7 @@ export default function Portfolio() {
 
       <main className="relative z-10 max-w-6xl mx-auto px-6 pt-32 pb-20 flex flex-col gap-32">
         <Hero />
+        <Experience />
         <Skills />
         <Projects />
         <Contact />

@@ -35,12 +35,16 @@ const Hero = () => {
                   </div>
                </div>
                <div className="flex items-center gap-4 mt-8">
-                  <a href={DATA.socialLinks.github} target="_blank" rel="noreferrer" className="group relative px-6 py-3 bg-white text-black rounded-full font-bold overflow-hidden">
-                     <span className="relative z-10 group-hover:text-white transition-colors duration-300">GitHub</span>
+            
+                  <a href={DATA.socialLinks.github} target="_blank" rel="noreferrer" className="px-6 py-3 bg-white/5 border border-white/10 hover:bg-white/10 rounded-full text-white font-medium transition-all backdrop-blur-sm">
+                     Github
+                  </a>
+                  <a href={DATA.socialLinks.linkedin} target="_blank" rel="noreferrer" className="group relative px-6 py-3 bg-white text-black rounded-full font-bold overflow-hidden">
+                     <span className="relative z-10 group-hover:text-white transition-colors duration-300">LinkedIn</span>
                      <div className="absolute inset-0 bg-purple-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
                   </a>
-                  <a href={DATA.socialLinks.linkedin} target="_blank" rel="noreferrer" className="px-6 py-3 bg-white/5 border border-white/10 hover:bg-white/10 rounded-full text-white font-medium transition-all backdrop-blur-sm">
-                     LinkedIn
+                  <a href={DATA.socialLinks.resume} target="_blank" rel="noreferrer" className="px-6 py-3 bg-white/5 border border-white/10 hover:bg-white/10 rounded-full text-white font-medium transition-all backdrop-blur-sm">
+                     Resume
                   </a>
                </div>
             </SpotlightCard>
