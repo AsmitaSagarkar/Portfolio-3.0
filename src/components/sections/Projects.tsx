@@ -17,8 +17,8 @@ const Projects = () => {
          </div>
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {DATA.projects.map((project) => (
-               <SpotlightCard key={project.id} className="group flex flex-col h-[350px]">
-                  <div className="relative h-[50%] overflow-hidden bg-slate-800">
+               <SpotlightCard key={project.id} className="group flex flex-col h-auto">
+                  <div className="relative h-48 sm:h-56 md:h-48 lg:h-52 overflow-hidden bg-slate-800">
                      <Image 
                         src={project.imageUrl} 
                         alt="loading"
@@ -28,9 +28,9 @@ const Projects = () => {
                         onError={(e: SyntheticEvent<HTMLImageElement>) => { e.currentTarget.src = 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80'; }} 
                      />
                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-90"></div>
-                     <div className="absolute top-4 right-4 flex gap-2 translate-y-[-10px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                        <a href={project.githubUrl} target="_blank" rel="noreferrer" className="p-2 bg-black/50 backdrop-blur-md rounded-full hover:bg-white hover:text-black transition-colors"><Github size={16} /></a>
-                        {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noreferrer" className="p-2 bg-black/50 backdrop-blur-md rounded-full hover:bg-white hover:text-black transition-colors"><ExternalLink size={16} /></a>}
+                     <div className="absolute top-4 right-4 flex gap-2 z-20 translate-y-0 opacity-100 md:translate-y-[-10px] md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 transition-all duration-500">
+                        <a aria-label="View source on GitHub" href={project.githubUrl} target="_blank" rel="noreferrer" className="p-2 bg-black/50 backdrop-blur-md rounded-full hover:bg-white hover:text-black transition-colors text-white"><Github size={16} /></a>
+                        {project.liveUrl && <a aria-label="Open live project" href={project.liveUrl} target="_blank" rel="noreferrer" className="p-2 bg-black/50 backdrop-blur-md rounded-full hover:bg-white hover:text-black transition-colors text-white"><ExternalLink size={16} /></a>}
                      </div>
                   </div>
                   <div className="flex-1 p-6 flex flex-col justify-between relative z-10">

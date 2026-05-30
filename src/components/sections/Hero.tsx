@@ -34,16 +34,16 @@ const Hero = () => {
                     </p>
                   </div>
                </div>
-               <div className="flex items-center gap-4 mt-8">
-            
-                  <a href={DATA.socialLinks.github} target="_blank" rel="noreferrer" className="px-6 py-3 bg-white/5 border border-white/10 hover:bg-white/10 rounded-full text-white font-medium transition-all backdrop-blur-sm">
+               <div className="flex flex-col md:flex-row items-center gap-3 md:gap-4 mt-20 md:mt-8 w-full md:w-auto">
+
+                  <a href={DATA.socialLinks.github} target="_blank" rel="noreferrer" className="w-full md:w-auto text-center px-4 py-2 md:px-6 md:py-3 bg-white/5 border border-white/10 hover:bg-white/10 rounded-full text-white text-sm md:text-base font-medium transition-all backdrop-blur-sm">
                      Github
                   </a>
-                  <a href={DATA.socialLinks.linkedin} target="_blank" rel="noreferrer" className="group relative px-6 py-3 bg-white text-black rounded-full font-bold overflow-hidden">
+                  <a href={DATA.socialLinks.linkedin} target="_blank" rel="noreferrer" className="w-full md:w-auto text-center group relative px-4 py-2 md:px-6 md:py-3 bg-white text-black rounded-full text-sm md:text-base font-bold overflow-hidden">
                      <span className="relative z-10 group-hover:text-white transition-colors duration-300">LinkedIn</span>
                      <div className="absolute inset-0 bg-purple-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
                   </a>
-                  <a href={DATA.socialLinks.resume} target="_blank" rel="noreferrer" className="px-6 py-3 bg-white/5 border border-white/10 hover:bg-white/10 rounded-full text-white font-medium transition-all backdrop-blur-sm">
+                  <a href={DATA.socialLinks.resume} target="_blank" rel="noreferrer" className="w-full md:w-auto text-center px-4 py-2 md:px-6 md:py-3 bg-white/5 border border-white/10 hover:bg-white/10 rounded-full text-white text-sm md:text-base font-medium transition-all backdrop-blur-sm">
                      Resume
                   </a>
                </div>
