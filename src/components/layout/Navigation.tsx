@@ -1,6 +1,6 @@
 "use client";
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Menu, MoonStar, SunMedium, X } from 'lucide-react';
 
 type NavigationProps = {
   activeSection: string;
@@ -9,6 +9,28 @@ type NavigationProps = {
 
 const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem('portfolio-theme');
+    const initialTheme = savedTheme === 'light' || savedTheme === 'dark'
+      ? savedTheme
+      : window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light';
+
+    setTheme(initialTheme);
+    document.documentElement.dataset.theme = initialTheme;
+    document.documentElement.style.colorScheme = initialTheme;
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(nextTheme);
+    document.documentElement.dataset.theme = nextTheme;
+    document.documentElement.style.colorScheme = nextTheme;
+    window.localStorage.setItem('portfolio-theme', nextTheme);
+  };
 
   const scrollTo = (id: string) => {
     setIsMenuOpen(false);
@@ -37,9 +59,14 @@ const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
            ))}
          </div>
 
-         <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 text-white hover:bg-white/10 rounded-full transition-colors">
-           {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-         </button>
+         <div className="flex items-center gap-1">
+           <button onClick={toggleTheme} className="p-2 text-white hover:bg-white/10 rounded-full transition-colors" aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}>
+             {theme === 'dark' ? <SunMedium size={18} /> : <MoonStar size={18} />}
+           </button>
+           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 text-white hover:bg-white/10 rounded-full transition-colors">
+             {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+           </button>
+         </div>
       </div>
 
       {/* Mobile Menu */}
