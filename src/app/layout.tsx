@@ -3,6 +3,7 @@ import './globals.css';
 export const metadata = {
   title: 'Asmita Sagarkar | Portfolio',
   description: 'Software Developer Portfolio',
+  
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
